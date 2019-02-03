@@ -1,6 +1,13 @@
 # Modular Analytics Tools for Unity
-This set of C# scripts for Unity provides a component-based interface for interacting with the Unity analytics service. 
+This Unity package provides a component-based interface for the Unity analytics service.
 
+It was created as part of my final project in the Creative Technologies BSc program at Bangor University. It was submitted in partial satisfaction of the degree requirements in May, 2016.
+
+The reporting component works by first examining the project's assemblies (or target assemblies), and allowing the target object to log the state of member variables from any attached component. 
+
+In the end, a completely modular approach to analytics reporting seems unnecessary, so I think this package is limited in usefulness and therefore it's provided here for free. 
+
+## Readme
 This guide will walk you the process of setting up a Unity project for analytics collection, and importing and setting up the Modular Analytics package. It is recommended that users have a basic understanding of the Unity editor, and the Unity analytics service. Basic functionality of the Unity editor, and limitations and specifications of the Unity analytics service will not be covered within this guide. 
 
 ## Integration 
