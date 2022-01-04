@@ -17,34 +17,34 @@ To begin, ensure that you have enabled the analytics service for your Unity proj
 
 Next, the assets must be imported. Select the "Assets > Import Package > Custom Package" menu option.
 
-![Unity Editor - Import Custom Package](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_custom_pkg.jpg)
+![Unity Editor - Import Custom Package](doc/img/fig_custom_pkg.jpg)
 
 In the dialog which opens, navigate to and select the *ModularAnalytics.asset* file. Note that it is not necessary to import the *ModularAnalytics_TestTools.asset* file. An import dialog will open: 
 
-![Unity Editor - Import ModularAnalytics Package](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_pkg_import.jpg)
+![Unity Editor - Import ModularAnalytics Package](doc/img/fig_pkg_import.jpg)
 
 Ensure that all of the files are selected (by pressing "All", if necessary). Press "Import". In the project pane, the script files will now be visible:
 
-![Unity Editor - Post-Import ModularAnalytics Package](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_project_postimport.jpg)
+![Unity Editor - Post-Import ModularAnalytics Package](doc/img/fig_project_postimport.jpg)
 
 The assets have now been imported. You may have also seen some output in the console, similar to what is depicted below: 
 
-![AnalyticsSettings Messages](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_settings_import.jpg)
+![AnalyticsSettings Messages](doc/img/fig_settings_import.jpg)
 
 This confirms that the settings package loaded correctly. If you received ouput similar to what is displayed below, however, then verify that the Unity analytics service was enabled (as discussed in the first paragraph of this section). If this step was omitted, then the tools will not function correctly. 
 
-![Unity Can't Find Analytics Namespace](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_console_noanalyticsnamespace.jpg)
+![Unity Can't Find Analytics Namespace](doc/img/fig_console_noanalyticsnamespace.jpg)
 
 - --
 ##### Verifying Settings
 
 Once the asset package has been imported and the analytics service enabled, a new menu option should be available. Its position may vary, depending on whether you have installed additional editor scripts. 
 
-![Analytics Settings Entry](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_analyticssettings.jpg)
+![Analytics Settings Entry](doc/img/fig_analyticssettings.jpg)
 
 Select this option, and a new dialog box will open in the Unity editor.
 
-![Analytics Settings Dialog](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_analyticssettingsbox.jpg)
+![Analytics Settings Dialog](doc/img/fig_analyticssettingsbox.jpg)
 
 Expand the "Target Assemblies" and "Assemblies" by clicking the triangle next to the name. If your dialog looks similar to what is depicted above, great! Press the "Save Settings" button, and close the dialog. The assemblies will be remembered for 
 
@@ -94,11 +94,11 @@ To make the system as flexible as possible, it's best to perform this process fo
 - --
 ##### Component Setup
 
-![AnalyticsComponent Filter](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_component_search.jpg)
+![AnalyticsComponent Filter](doc/img/fig_component_search.jpg)
 
 Select a GameObject in the Unity editor, then press "Add Component" in the inspector pane, as you would when attaching any other script or Component object. Begin to enter "analytics" in the search filter, and the "Analytics Component" script appears. Select it. 
 
-![AnalyticsComponent](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_component_go.jpg)
+![AnalyticsComponent](doc/img/fig_component_go.jpg)
 
 > NOTE: If the console displays errors after attaching the AnalyticsComponent, ensure that at least one method in the project's code was defined as a trigger method, as described in the section above. This is a known issue. 
 
@@ -108,7 +108,7 @@ Specify an "Event Name" in the field, which will describe the event data sent to
 
 Next, press the "+" symbol at the bottom-right of the list box. A new list entry will appear. 
 
-![New List Item](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_event_item.jpg)
+![New List Item](doc/img/fig_event_item.jpg)
 
 Specify a name for the list item. This will be treated as a "key" of a key-value pair within a Dictionary. The dropdown box is populated with members belonging to any other Components attached to the GameObject. Each entry in the dropdown is displayed in the format:
 > Component: memberName (memberType)
@@ -124,12 +124,12 @@ Once you have specified an event and set up the AnalyticsComponent (described ab
 
 First, open the "Analytics Settings" dialog. Ensure that the "Offline" box, at the top of the dialog, is ticked. 
 
-![Analytics Settings Offline](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_offline.jpg)
+![Analytics Settings Offline](doc/img/fig_offline.jpg)
 
 When this box is checked, the Modular Analytics system will operate in an offline mode. No events will be transmitted to the Unity analytics service, and all data will be logged to the editor console (or, to the [player log file](http://docs.unity3d.com/Manual/LogFiles.html), if you are running your game as a built executable). 
 
-![Analytics Settings Offline Results](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_resultsoffline.jpg)
-![Analytics Component Offline Results](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_resultscomponent.jpg)
+![Analytics Settings Offline Results](doc/img/fig_resultsoffline.jpg)
+![Analytics Component Offline Results](doc/img/fig_resultscomponent.jpg)
 
 You can use offline mode to verify that your event triggers are functioning correctly, and that the data specified in your components is being logged correctly, by cross-referencing your specified member names with the log output. In the example above, the "EnemyDied" event was transmitted when the "Death" method was called within the "EnemyHealth" script - this behaviour was verified by playing the game. The console log indicates that an event with the name "EnemyDied" was transmitted, with two event values specified - "playerPosition" and "playerCurrentHealth". These match the members we specified in the list within the component, so everything looks okay!
 
@@ -138,17 +138,17 @@ You can use offline mode to verify that your event triggers are functioning corr
 
 After you have (optionally) verified your components and data targets by using the offline mode, you are ready to begin capturing data with the Modular Analytics tools. First, you must untick the "Offline" box in the analytics settings dialog, and click "Save Settings" before closing the dialog. 
 
-![Untick Offline](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_offlineun.jpg)
+![Untick Offline](doc/img/fig_offlineun.jpg)
 
 Then, you can verify by testing your game as before. When the event is fired, you will receive log information, denoting the name of the object transmitting data, and a _response code_ sent from the Unity service. These response codes are detailed [here](http://docs.unity3d.com/ScriptReference/Analytics.AnalyticsResult.html). Typically, you should expect a response of "Ok", although you may encounter other responses if you transmit large volumes of data (or somehow transmit malformed data).
 
 To verify that the server received appropriate data, you can visit the analytics dashboard page [here](https://analytics.cloud.unity3d.com/) (you must be logged in to your Unity services account). Select your project, click the "Integration" tab, then choose your engine version from the dropdown list. Then, select the "Advanced Integration" link near the top. 
 
-![Advanced Integration Dashboard Link](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_advlink.jpg)
+![Advanced Integration Dashboard Link](doc/img/fig_advlink.jpg)
 
 Scroll to the bottom of the "Advanced Integration" page. A table will be listed, under the heading "Validate". Here, you should see received data under the "Event" column, similar to what is shown below:
 
-![Advanced Integration Data](https://dl.dropboxusercontent.com/u/406357/unityanalytics/fig_advancedintegration.jpg)
+![Advanced Integration Data](doc/img/fig_advancedintegration.jpg)
 
 If this data appears here, you have successfully integrated the Modular Analytics tools into your project, and can use the analytics component to specify data collection from any object within your game. 
 - --
@@ -161,12 +161,6 @@ If this data appears here, you have successfully integrated the Modular Analytic
 
 - --
 
-##### Additional Information
+##### Contact
 
-It is expected that these tools will be updated over time to correct bugs or to improve functionality.
-
-If you encounter issues using the tools and require guidance, or if you'd like to report bugs or suggest features, get in touch: 
-
-> s p e n c e @ r a b i d m n k y . c o m
-
-(make sure to remove all of the spaces) 
+> spence @ rabidmnky . com
