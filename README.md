@@ -153,7 +153,7 @@ Scroll to the bottom of the "Advanced Integration" page. A table will be listed,
 If this data appears here, you have successfully integrated the Modular Analytics tools into your project, and can use the analytics component to specify data collection from any object within your game. 
 - --
 ## Known Issues and AFIs (Areas For Improvement)
-- Parameters in the `AnalyticsManager.Notify` method must match the class and method names exactly, which can be easily overlooked when refactoring or renaming methods or classes. An automated way of extracting this information is being investigated. 
+- Parameters in the `AnalyticsManager.Notify` method must match the class and method names exactly, which can be easily overlooked when refactoring or renaming methods or classes. 
 - If a class is explicitly declared within a namespace, the namespace must be specified in the `AnalyticsManager.Notify` class name parameter, which is not necessarily intuitive or obvious. 
 - Unity editor can throw an exception when no `AnalyticsEvents` are specified in code, and a user adds a `AnalyticsComponent` to a GameObject. The exception will be resolved by removing the component, or specifying an AnalyticsEvent, and reloading/saving assemblies in the "Analytics Settings" dialog.
 - After code is modified to include `AnalyticsEvent`s, assemblies **must** be reloaded through the "Analytics Settings" dialog.
