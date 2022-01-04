@@ -4,9 +4,7 @@ This Unity package provides a component-based interface for the Unity analytics 
 It was created as part of my final project for the Creative Technologies BSc program at Bangor University. I submitted the project and written dissertation in May 2016, and received my degree with first class honours in July of that year. 
 - --
 
-The reporting component works by first examining the project's assemblies (or target assemblies), and allowing the target object to log the state of member variables from any attached component. 
-
-In the end, a completely modular approach to analytics reporting seems unnecessary, so I think this package is limited in usefulness and therefore it's provided here for free. 
+The reporting component works by first examining the project's assemblies (or target assemblies), and allowing the target object to log the state of member variables from any attached component.
 
 ## Readme
 This guide will walk you the process of setting up a Unity project for analytics collection, and importing and setting up the Modular Analytics package. It is recommended that users have a basic understanding of the Unity editor, and the Unity analytics service. Basic functionality of the Unity editor, and limitations and specifications of the Unity analytics service will not be covered within this guide. 
