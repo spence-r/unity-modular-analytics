@@ -1,7 +1,8 @@
 # Modular Analytics Tools for Unity
 This Unity package provides a component-based interface for the Unity analytics service.
 
-It was created as part of my final project in the Creative Technologies BSc program at Bangor University. It was submitted in partial satisfaction of the degree requirements in May, 2016.
+It was created as part of my final project for the Creative Technologies BSc program at Bangor University. I submitted the project and written dissertation in May 2016, and received my degree with first class honours in July of that year. 
+- --
 
 The reporting component works by first examining the project's assemblies (or target assemblies), and allowing the target object to log the state of member variables from any attached component. 
 
