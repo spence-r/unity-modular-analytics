@@ -1,10 +1,11 @@
 # Modular Analytics Tools for Unity
 This Unity package provides a component-based interface for the Unity analytics service.
 
-It was created as part of my final project for the Creative Technologies BSc program at Bangor University. I submitted the project and written dissertation in May 2016, and received my degree with first class honours in July of that year. 
-- --
+It was created as part of my final project for the Creative Technologies BSc program at Bangor University. 
+I submitted the project and written dissertation in May 2016 and received my degree (with first class honours) in July 2016.
 
-The reporting component works by first examining the project's assemblies (or target assemblies), and allowing the target object to log the state of member variables from any attached component.
+The reporting component works by first examining the project's assemblies (or target assemblies), which allows the target object to be capable of logging the  state of any member variables belonging to any attached component(s). 
+- --
 
 ## Readme
 This guide will walk you the process of setting up a Unity project for analytics collection, and importing and setting up the Modular Analytics package. It is recommended that users have a basic understanding of the Unity editor, and the Unity analytics service. Basic functionality of the Unity editor, and limitations and specifications of the Unity analytics service will not be covered within this guide. 
@@ -157,9 +158,3 @@ If this data appears here, you have successfully integrated the Modular Analytic
 - Unity editor can throw an exception when no `AnalyticsEvents` are specified in code, and a user adds a `AnalyticsComponent` to a GameObject. The exception will be resolved by removing the component, or specifying an AnalyticsEvent, and reloading/saving assemblies in the "Analytics Settings" dialog.
 - After code is modified to include `AnalyticsEvent`s, assemblies **must** be reloaded through the "Analytics Settings" dialog.
 - Rarely, an exception is thrown when manipulating the "Analytics Settings" dialog. However, in production, this was only encountered when modifying the `AnalyticsSettings.cs` file while the editor was running. 
-
-- --
-
-##### Contact
-
-> spence @ rabidmnky . com
