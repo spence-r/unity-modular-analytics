@@ -7,11 +7,10 @@ I submitted the project and written dissertation in May 2016 and received my deg
 The reporting component works by first examining the project's assemblies (or target assemblies), which allows the target object to be capable of logging the  state of any member variables belonging to any attached component(s). 
 - --
 
-## Readme
 This guide will walk you the process of setting up a Unity project for analytics collection, and importing and setting up the Modular Analytics package. It is recommended that users have a basic understanding of the Unity editor, and the Unity analytics service. Basic functionality of the Unity editor, and limitations and specifications of the Unity analytics service will not be covered within this guide. 
 
 ## Integration 
-- --
+
 ##### Unity Setup and Import
 To begin, ensure that you have enabled the analytics service for your Unity project, by following the instructions provided [here](http://docs.unity3d.com/Manual/UnityAnalyticsOverview.html). This will associate your project with an identifier for Unity services, and also load the required `UnityEngine.Analytics` classes.
 
